@@ -9,6 +9,7 @@
         <module name="springboot-source" />
         <module name="netty-source" />
         <module name="getting-start" />
+        <module name="observer-pattern" />
       </profile>
     </annotationProcessing>
   </component>
