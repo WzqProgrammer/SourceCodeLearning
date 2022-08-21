@@ -1,20 +1,19 @@
-package com.source.wzq.domin.store;
+package com.source.wzq.domin.factory;
 
-import com.source.wzq.domin.factory.ChicagoPizzaIngredientFactory;
-import com.source.wzq.domin.pizzas.ChicagoStyleCheesePizza;
+import com.source.wzq.domin.pizzas.CheesePizza;
 import com.source.wzq.domin.pizzas.ClamPizza;
 import com.source.wzq.domin.pizzas.PepperoniPizza;
 import com.source.wzq.domin.pizzas.VeggiePizza;
 import com.source.wzq.supper.Pizza;
 import com.source.wzq.supper.PizzaEnum;
-import com.source.wzq.supper.PizzaIngredientFactory;
-import com.source.wzq.supper.PizzaStore;
 
-public class ChicagoPizzaStore extends PizzaStore {
-    @Override
-    public Pizza createPizza(PizzaEnum pizzaEnum) {
+/**
+ * @author wangzhengqing
+ */
+public class SimplePizzaFactory {
+
+    public Pizza createPizza(PizzaEnum pizzaEnum){
         Pizza pizza;
-        PizzaIngredientFactory pizzaIngredientFactory = new ChicagoPizzaIngredientFactory();
 
         switch(pizzaEnum){
             case VEGGIE:
@@ -27,8 +26,7 @@ public class ChicagoPizzaStore extends PizzaStore {
                 pizza = new PepperoniPizza();
                 break;
             case CHEESE:
-                // 生产的是芝加哥风味的奶酪披萨
-                pizza = new ChicagoStyleCheesePizza(pizzaIngredientFactory);
+                pizza = new CheesePizza();
                 break;
             default:
                 pizza = null;

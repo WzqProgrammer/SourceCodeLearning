@@ -2,12 +2,17 @@ package com.source.wzq.supper;
 
 public abstract class Pizza {
 
+    protected Dough dough;
+    protected Sauce sauce;
+
+    protected PizzaIngredientFactory pizzaIngredientFactory;
+
     protected String pizzaName;
 
-
-    public void prepare(){
-        System.out.println(pizzaName + " 正在准备...");
-    }
+    /**
+     * 所有种类pizza都需要准备材料
+     */
+    public abstract void prepare();
 
     public void bake(){
         System.out.println(pizzaName + " 正在烘培");
