@@ -1,2 +1,26 @@
-package com.source.wzq.supper.impl;public class MacroCommand {
+package com.source.wzq.supper.impl;
+
+import com.source.wzq.supper.Command;
+
+public class MacroCommand implements Command {
+
+    Command[] commands;
+
+    public MacroCommand(Command[] commands){
+        this.commands = commands;
+    }
+
+    @Override
+    public void execute() {
+        for (int i = 0; i < commands.length; i++) {
+            commands[i].execute();
+        }
+    }
+
+    @Override
+    public void undo() {
+        for (int i = 0; i < commands.length; i++) {
+            commands[i].undo();
+        }
+    }
 }

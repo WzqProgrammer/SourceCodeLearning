@@ -20,6 +20,7 @@
         <module>springboot-source</module>
         <module>netty-source</module>
         <module>mybatis-source</module>
+        <module>camel-learn</module>
     </modules>
 
     <properties>

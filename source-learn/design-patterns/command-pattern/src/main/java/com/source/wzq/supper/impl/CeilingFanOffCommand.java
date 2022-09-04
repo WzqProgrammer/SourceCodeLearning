@@ -3,16 +3,21 @@ package com.source.wzq.supper.impl;
 import com.source.wzq.domin.CeilingFan;
 import com.source.wzq.supper.Command;
 
-public class CeilingFanOnCommand implements Command {
+public class CeilingFanOffCommand implements Command {
 
     CeilingFan ceilingFan;
 
-    public CeilingFanOnCommand(CeilingFan ceilingFan){
+    public CeilingFanOffCommand(CeilingFan ceilingFan){
         this.ceilingFan = ceilingFan;
     }
 
     @Override
-    public void execuate() {
+    public void execute() {
+        ceilingFan.off();
+    }
+
+    @Override
+    public void undo() {
         ceilingFan.on();
     }
 }
